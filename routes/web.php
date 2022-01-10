@@ -13,8 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layout.app');
-});
+// Route::get('/', function () {
+//     return view('layout.blog.index');
+// });
+
+Route::get('/',[App\Http\Controllers\BlogController::class,'index']);
+Route::get('/data/blog',[App\Http\Controllers\BlogController::class,'create'])->name('blog.index');
+Route::get('/add',[App\Http\Controllers\BlogController::class,'createblog'])->name('blog.create');
 
 
